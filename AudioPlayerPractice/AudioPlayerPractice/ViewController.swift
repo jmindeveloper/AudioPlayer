@@ -32,6 +32,9 @@ class ViewController: UIViewController {
         engine.connect(audioPlayer, to: pitchControl, format: nil)
         engine.connect(pitchControl, to: engine.mainMixerNode, format: nil)
         
+        // 피치조절
+        pitchControl.pitch += 100
+        
         audioPlayer.scheduleFile(audioFile, at: nil)
         
         try! engine.start()
